@@ -2,18 +2,31 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 // import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
+import { BehaviorSubject } from 'rxjs';
+import { Observable } from 'rxjs';
 // import { map } from 'rxjs/operators';
+
+interface user {
+  login: string;
+  id: string;
+}
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class UsuarioService {
+  private dataSource = new BehaviorSubject('');
+  currentData = this.dataSource.asObservable();
+  usuario: Observable<user[]>;
 
-  constructor(private http:HttpClient) {
+  constructor(private http:HttpClient) { }
 
+  changeData(data: string) {
+    this.dataSource.next(data);
   }
 
-  getProfileInfo(usuario: string){
-    return this.http.get("https://api.github.com/users/"+usuario).map(res => res);
+  getProfileInfo(usuario: string){ // Retorna Observable com as infos do http
+    return this.http.get("https://api.github.com/users/"+usuario).map(res => res); 
   }
 }

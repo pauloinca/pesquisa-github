@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../../services/usuario.service'
+import { Router, ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-home',
@@ -7,11 +8,9 @@ import { UsuarioService } from '../../services/usuario.service'
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  usuario: any;
   values = '';
 
-
-  constructor(private usuarioService:UsuarioService) {
+  constructor(private usuarioService:UsuarioService, private router:Router, private route:ActivatedRoute) {
 
   }
 
@@ -19,11 +18,13 @@ export class HomeComponent implements OnInit {
     this.values = event.target.value;
   }
 
-  enterPress(){
-    this.usuarioService.getProfileInfo(this.values).subscribe(usuario => {
-      this.usuario = usuario;   
-      console.log(this.usuario.login);   
-    });
+  enterPress(url){
+    // this.usuarioService.getProfileInfo(this.values).subscribe(usuario => {
+    //   this.usuario = usuario;         
+    // });
+    // this.usuarioService.currentData.subscribe(data => )
+    this.usuarioService.changeData(this.values);
+    this.router.navigate([url]);
   }
 
   ngOnInit(): void {
