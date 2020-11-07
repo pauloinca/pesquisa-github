@@ -1,0 +1,26 @@
+<header>
+    <div class="img-cover-wrapper">
+        <img src="../assets/images/cover.jpg" alt="" />
+    </div>
+  </header>
+  
+  <div class="main-div">
+    <mat-card class="card-container">
+      <div class="img-wrapper">
+        <img src="./assets/images/github.png" alt="" />
+      </div>
+      <div class="search-wrapper">
+          <mat-form-field class="search-form-field">
+            <mat-label>Teste</mat-label>
+            <input matInput placeholder="teste">
+          </mat-form-field>
+          <div class="search-button">
+            <button routerLink="/usuario-component" routerLinkActive="active" mat-raised-button color="primary">Pesquisa</button>
+          </div>
+      </div>
+    </mat-card>
+  
+  
+  </div>
+  
+  <router-outlet></router-outlet>
