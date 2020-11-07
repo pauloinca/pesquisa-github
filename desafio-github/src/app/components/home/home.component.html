@@ -12,10 +12,10 @@
       <div class="search-wrapper">
           <mat-form-field class="search-form-field">
             <mat-label>Teste</mat-label>
-            <input matInput placeholder="teste">
+            <input (keyup)="onKey($event)" (keyup.enter)="enterPress()" matInput placeholder="teste">
           </mat-form-field>
           <div class="search-button">
-            <button routerLink="/usuario-component" routerLinkActive="active" mat-raised-button color="primary">Pesquisa</button>
+            <button (click)="enterPress()" mat-raised-button color="primary">Pesquisa</button>
           </div>
       </div>
     </mat-card>
