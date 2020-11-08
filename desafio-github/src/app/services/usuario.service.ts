@@ -29,4 +29,8 @@ export class UsuarioService {
   getProfileInfo(usuario: string){ // Retorna Observable com as infos do http
     return this.http.get("https://api.github.com/users/"+usuario).map(res => res); 
   }
+
+  getProfileRepos(usuario: string){
+    return this.http.get("https://api.github.com/users/"+usuario+"/repos").map(res => res); 
+  }
 }

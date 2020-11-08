@@ -12,6 +12,11 @@ import { UsuarioService } from './services/usuario.service'
 import { MatCardModule } from '@angular/material/card'
 import { MatInputModule } from '@angular/material/input'
 import { MatButtonModule } from '@angular/material/button'
+import { MatGridListModule } from '@angular//material/grid-list'
+import { MatIconModule } from '@angular//material/icon'
+import { MatTableModule } from '@angular//material/table'
+import { MatSortModule } from '@angular//material/sort'
+
 
 @NgModule({
   declarations: [
@@ -26,6 +31,10 @@ import { MatButtonModule } from '@angular/material/button'
     MatCardModule,
     MatInputModule,
     MatButtonModule,
+    MatGridListModule,
+    MatIconModule,
+    MatTableModule,
+    MatSortModule,
     HttpClientModule
   ],
   providers: [UsuarioService],

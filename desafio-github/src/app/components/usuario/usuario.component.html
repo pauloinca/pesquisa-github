@@ -1,6 +1,84 @@
+<header>
+  <div class="img-cover-wrapper">
+    <img src="../assets/images/cover.jpg" alt="" />
+  </div>
+</header>
 
-<div *ngIf="usuario">
-    <h1>{{usuario.id}}</h1>
+<div *ngIf="usuario" class="main-div">
+  <mat-card class="card-container">
+    <div class="panel-header mat-typography">
+      <div class="box1 avatar-wrapper">
+        <img src="{{usuario.avatar_url}}">
+      </div>
+      <div class="super-box-container">
+        <div class="box-container1">
+          <div class="box2">
+            <mat-icon inline="true">account_circle</mat-icon>
+            <div class="sub-box2">
+                <h2>{{usuario.name}}</h2>
+                <h3>{{usuario.login}}</h3>
+            </div>
+          </div>
+          <div class="box3">
+            <h2>{{usuario.followers}}</h2>
+          </div>
+          <div class="box4">
+            <h2>{{usuario.login}}</h2>
+          </div>
+        </div>
+        <div class="box-container2">
+          <div *ngIf="usuario.email != null; else elseBlock" class="box5">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">email</mat-icon>
+            <h2>{{usuario.email}}</h2>
+          </div>          
+          <ng-template #elseBlock >
+              <div class="box5">
+                  <mat-icon inline="true">email</mat-icon>
+                  <h2>Email: null</h2>
+              </div>
+          </ng-template>
+          <div class="box6">
+            <h2>{{usuario.login}}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-text">
+      <h1>Repositórios</h1>
+    </div>
+    <div class="panel-repositorios">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort matSortActive="stargazers_count" matSortDirection="desc">
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
+              <td mat-cell *matCellDef="let repos"> {{repos.name}} </td>
+            </ng-container>
+          
+            <!-- Description Column -->
+            <ng-container matColumnDef="description">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Descrição </th>
+              <td mat-cell *matCellDef="let repos"> {{repos.description}} </td>
+            </ng-container>
+          
+            <!-- Stargaze Count Column -->
+            <ng-container matColumnDef="stargazers_count">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Nº estrelas </th>
+              <td mat-cell *matCellDef="let repos"> {{repos.stargazers_count}} </td>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="language">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Linguagem </th>
+              <td mat-cell *matCellDef="let repos"> {{repos.language}} </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+    </div>
+  </mat-card>
 </div>
+
 
 <router-outlet></router-outlet>
