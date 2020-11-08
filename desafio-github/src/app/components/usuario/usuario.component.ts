@@ -4,6 +4,8 @@ import { UsuarioService } from '../../services/usuario.service'
 import {AfterViewInit, ViewChild} from '@angular/core';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-usuario',
@@ -13,10 +15,12 @@ import {MatTableDataSource} from '@angular/material/table';
 
 
 export class UsuarioComponent implements OnInit, AfterViewInit {
+  faCoffee = faCoffee;
+  faLink = faLink;
   data: string;
   usuario: any;
   repos: any;
-  displayedColumns: string[] = ['name', 'description', 'stargazers_count', 'language'];
+  displayedColumns: string[] = ['name', 'description', 'stargazers_count', 'language', 'svn_url'];
   dataSource: any
 
   @ViewChild (MatSort) sort: MatSort;
@@ -24,8 +28,6 @@ export class UsuarioComponent implements OnInit, AfterViewInit {
   constructor(private usuarioService: UsuarioService) {
 
   }
-
-
 
   ngOnInit(){
 
@@ -41,8 +43,7 @@ export class UsuarioComponent implements OnInit, AfterViewInit {
       this.usuarioService.getProfileRepos(this.data).subscribe(repos => {
         this.repos = repos;        
         this.dataSource = new MatTableDataSource(this.repos);
-        this.dataSource.sort = this.sort;
-        console.log(this.dataSource);
+        this.dataSource.sort = this.sort;        
       });
 
     });

@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   }
 
   onKey(event: any){
-    this.values = event.target.value;
+    this.values = event.target.value; // this.values = valor digitado no input
   }
 
   enterPress(url){

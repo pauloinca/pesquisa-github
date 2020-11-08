@@ -1,3 +1,4 @@
+
 <header>
   <div class="img-cover-wrapper">
     <img src="../assets/images/cover.jpg" alt="" />
@@ -47,35 +48,45 @@
       <h1>Repositórios</h1>
     </div>
     <div class="panel-repositorios">
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort matSortActive="stargazers_count" matSortDirection="desc">
+        <mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort matSortActive="stargazers_count" matSortDirection="desc">
 
             <!-- Name Column -->
             <ng-container matColumnDef="name">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
-              <td mat-cell *matCellDef="let repos"> {{repos.name}} </td>
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Nome </mat-header-cell>
+              <mat-cell *matCellDef="let repos"> {{repos.name}} </mat-cell>
             </ng-container>
           
             <!-- Description Column -->
             <ng-container matColumnDef="description">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header> Descrição </th>
-              <td mat-cell *matCellDef="let repos"> {{repos.description}} </td>
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Descrição </mat-header-cell>
+              <mat-cell *matCellDef="let repos"> {{repos.description}} </mat-cell>
             </ng-container>
           
             <!-- Stargaze Count Column -->
             <ng-container matColumnDef="stargazers_count">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header> Nº estrelas </th>
-              <td mat-cell *matCellDef="let repos"> {{repos.stargazers_count}} </td>
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Nº estrelas </mat-header-cell>
+              <mat-cell *matCellDef="let repos"> {{repos.stargazers_count}} </mat-cell>
             </ng-container>
           
-            <!-- Symbol Column -->
+            <!-- Language Column -->
             <ng-container matColumnDef="language">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header> Linguagem </th>
-              <td mat-cell *matCellDef="let repos"> {{repos.language}} </td>
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Linguagem </mat-header-cell>
+              <mat-cell *matCellDef="let repos"> {{repos.language}} </mat-cell>
+            </ng-container>
+
+            <!-- Link Column -->
+            <ng-container matColumnDef="svn_url">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Link </mat-header-cell>
+              <mat-cell *matCellDef="let repos">
+                <a target="_blank" href="{{repos.svn_url}}" mat-mini-fab class="link-button">
+                  <fa-icon [icon]="faLink"></fa-icon>
+                </a>
+              </mat-cell>
             </ng-container>
           
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-          </table>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
     </div>
   </mat-card>
 </div>

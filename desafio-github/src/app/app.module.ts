@@ -15,7 +15,8 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatGridListModule } from '@angular//material/grid-list'
 import { MatIconModule } from '@angular//material/icon'
 import { MatTableModule } from '@angular//material/table'
-import { MatSortModule } from '@angular//material/sort'
+import { MatSortModule } from '@angular//material/sort';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { MatSortModule } from '@angular//material/sort'
     MatIconModule,
     MatTableModule,
     MatSortModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [UsuarioService],
   bootstrap: [AppComponent]

@@ -6,10 +6,10 @@ import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs';
 // import { map } from 'rxjs/operators';
 
-interface user {
-  login: string;
-  id: string;
-}
+// interface user {
+//   login: string;
+//   id: string;
+// }
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,7 @@ interface user {
 export class UsuarioService {
   private dataSource = new BehaviorSubject('');
   currentData = this.dataSource.asObservable();
-  usuario: Observable<user[]>;
+  usuario: any;
 
   constructor(private http:HttpClient) { }
 
