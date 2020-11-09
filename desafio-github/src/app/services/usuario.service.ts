@@ -26,11 +26,11 @@ export class UsuarioService {
     this.dataSource.next(data);
   }
 
-  getProfileInfo(usuario: string){ // Retorna Observable com as infos do http
+  getProfileInfo(usuario: string){ // Retorna Observable com as infos do http do usuario
     return this.http.get("https://api.github.com/users/"+usuario).map(res => res); 
   }
 
-  getProfileRepos(usuario: string){
+  getProfileRepos(usuario: string){ // Retorna Observable com as infos do http do repositorio do usuario
     return this.http.get("https://api.github.com/users/"+usuario+"/repos").map(res => res); 
   }
 }

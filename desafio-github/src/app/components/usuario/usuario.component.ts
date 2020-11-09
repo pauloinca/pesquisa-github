@@ -4,8 +4,13 @@ import { UsuarioService } from '../../services/usuario.service'
 import {AfterViewInit, ViewChild} from '@angular/core';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faUserCheck } from '@fortawesome/free-solid-svg-icons';
+import { faBookOpen } from '@fortawesome/free-solid-svg-icons';
+import { Router, ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-usuario',
@@ -15,38 +20,46 @@ import { faLink } from '@fortawesome/free-solid-svg-icons';
 
 
 export class UsuarioComponent implements OnInit, AfterViewInit {
-  faCoffee = faCoffee;
-  faLink = faLink;
-  data: string;
-  usuario: any;
-  repos: any;
+  // Font-Awesome Icon 
+  faEnvelope = faEnvelope;
+  faLink = faLink;  
+  faNome = faUserCircle;
+  faSeguidores = faUsers;
+  faSeguindo = faUserCheck;
+  faBiografia = faBookOpen;
+
+  usuario: any; // Observable com as infos do usuario
+  repos: any; // Observable com as infos do repositório
   displayedColumns: string[] = ['name', 'description', 'stargazers_count', 'language', 'svn_url'];
   dataSource: any
+  userName: any // Nome do usuário
 
   @ViewChild (MatSort) sort: MatSort;
 
-  constructor(private usuarioService: UsuarioService) {
-
+  constructor(private usuarioService: UsuarioService, private router: ActivatedRoute) {
+    // this.teste = this.router.snapshot.paramMap.get('usuario');
+    // console.log(this.teste);
   }
 
   ngOnInit(){
-
+    this.router.paramMap.subscribe(params => {
+      this.userName = params.get("usuario");      
+    })
   }
 
   ngAfterViewInit(){
-    this.usuarioService.currentData.subscribe(data => {
-      this.data = data;
-      this.usuarioService.getProfileInfo(this.data).subscribe(usuario => {
+
+      // Pego as informaçoes do usuario
+      this.usuarioService.getProfileInfo(this.userName).subscribe(usuario => {
         this.usuario = usuario;      
       });
 
-      this.usuarioService.getProfileRepos(this.data).subscribe(repos => {
+      // Pego as informações dos repositórios dos usuarios e dou um sort
+      this.usuarioService.getProfileRepos(this.userName).subscribe(repos => {
         this.repos = repos;        
         this.dataSource = new MatTableDataSource(this.repos);
         this.dataSource.sort = this.sort;        
       });
-
-    });
   }
 
 }

@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
     // });
     // this.usuarioService.currentData.subscribe(data => )
     this.usuarioService.changeData(this.values);
-    this.router.navigate([url]);
+    this.router.navigate([url,this.values]);
   }
 
   ngOnInit(): void {

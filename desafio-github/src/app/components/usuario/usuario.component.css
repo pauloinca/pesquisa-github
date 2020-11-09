@@ -1,14 +1,21 @@
+
+/* ----- Typography and fonts ----- */
+
+h1 {
+  font-size: calc(2.1vw + 2.1vh);
+}
+
 h2 {
+  font-size: calc(1.8vw + 1.8vh);
+  line-height: calc(1.8vw + 1.8vh);
   margin: auto 0;
 }
 
 h3 {
   margin: auto 0;
   font-weight: 500;
-}
-
-.mat-icon {
-  height: 100%;
+  font-size: calc(1.3vw + 1.3vh);
+  line-height: calc(1.5vw + 1.5vh);
 }
 
 .main-div {
@@ -41,6 +48,7 @@ header {
 }
 
 .card-container {
+    background-color: #e0e0e0;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -48,19 +56,36 @@ header {
   justify-content: flex-start;
   height: 80vh;
   min-width: 15%;
-  width: 70vw;
+  width: 70%;
+  /* width: 70vw; */
 }
 
 .panel-header {
-  width: 100%;
-  height: 30%;
+  width: 98%;
+  height: 38%;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 50%;
   /* background-color: royalblue; */
+}
+
+.panel-body{
+    margin-top: calc(.5vw + .5vh);
+    width: 98%;
+    height: 58%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 50%;    
 }
 
 .super-box-container {
   background-color: grey;
   width: 100%;
+  height: auto;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -74,7 +99,6 @@ header {
   width: 20%;
   min-width: 15%;
   align-self: stretch;
-  background-color: yellow;
 }
 
 .box-container1 {
@@ -94,7 +118,7 @@ header {
   display: flex;
   width: 100%;
   height: 50%;
-  min-width: 50%;
+  min-width: 50%;  
   /* min-width: 50%;
      justify-content: space-between;
     align-self: center;
@@ -105,7 +129,7 @@ header {
 
 
 .avatar-wrapper {
-    /* width: 100%;
+  /* width: 100%;
     height: 100%; */
   display: flex;
   justify-content: center;
@@ -124,29 +148,71 @@ header {
 
 .box2 {
   height: auto;
-  width: 40%;
+  width: 80%;
   display: flex;
   flex-direction: row;
-  vertical-align: middle !important;
+  /* vertical-align: middle !important; */
   justify-items: center;
   line-height: 2rem;
   background-color: lawngreen;
 }
 
-.box2 mat-icon {
+.box2 fa-icon {
   display: flex;
   align-content: center;
-  align-items: center;
-  width: 2rem;
-  background-color: hotpink;
-  font-size: 2rem;
+  align-items: center;  
+  font-size: calc(2vw + 2vh);
+  margin-right: 1vw;
 }
 
 .sub-box2 {
   width: 100%;
   display: flex;
-  flex-direction: column;
-  background-color: royalblue;
+  flex-direction: column;  
+}
+
+.sub-box2 h2 {
+  /* line-height: 1rem; */
+  word-wrap: break-word;  
+}
+
+.sub-box34{
+    height: auto;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box3{
+    /* width: 20%; */
+    line-height: 3rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.box3 fa-icon{
+    display: flex;
+    align-content: center;
+    align-items: center;    
+    font-size: calc(1.5vw + 1.5vh);   
+    margin-right: .5vw; 
+}
+
+.box4{
+    /* width: 20%; */
+    line-height: 3rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.box4 fa-icon{
+    display: flex;
+    align-content: center;
+    align-items: center;    
+    font-size: calc(1.5vw + 1.5vh);
+    margin-right: .5vw;
 }
 
 
@@ -165,21 +231,20 @@ header {
   height: 100%;
   width: 60%;
   display: flex;
-  line-height: 3rem;
+  line-height: 1rem;
   background-color: red;
+  word-break: break-all;
 }
 
-.box5 mat-icon {
+.box5 fa-icon {
+    margin-right: 1vw;
+  font-size: calc(1.3vw + 1.3vh);
+  width: calc(2vw + 2vh);
+  text-align: center;
   display: flex;
-  align-content: center;
-  align-items: center;
-  width: 2rem;
-  background-color: hotpink;
-  font-size: 2rem;
-}
+  justify-content: center;
+  align-items: center;  
 
-.box5 h2 {
-  position: relative;
 }
 
 .box6 {
@@ -209,6 +274,7 @@ header {
   overflow: auto;
   /* position: relative; */
   width: 100%;
+  margin: 0;
   /* width: 100%;    
     overflow-y: scroll;
     max-height: 8rem; */
@@ -220,52 +286,59 @@ header {
 } */
 .mat-cell,
 .mat-header-cell {
-  padding: 0px 2px 0px 2px;
+  padding: 0px 3px 0px 3px;
   height: auto;
+  word-break: break-all;
 }
 
 .mat-column-name {
+  /* min-width: 30%; */
   word-wrap: break-word;
-  width: 15%;
+  /* min-width: 2.5rem; */
+  /* width: 15%; */
   flex: 0 0 15%;
   overflow-wrap: break-word;
   white-space: unset;
-  word-break: break-all;
+  /* word-break: break-all; */
 }
 
 .mat-column-description {
+  /* min-width: 30%; */
   word-wrap: break-word;
-  width: 40%;
+  /* min-width: 10rem; */
+  /* width: 40%; */
   flex: 0 0 40%;
   overflow-wrap: break-word;
   white-space: unset;
-  word-break: break-all;
+  /* word-break: break-all; */
 }
 
 .mat-column-stargazers_count {
+  /* min-width: 30%; */
   word-wrap: break-word;
-  width: 15%;
+  /* width: 15%; */
+  /* min-width: 2.5rem; */
   flex: 0 0 15%;
   overflow-wrap: break-word;
   white-space: unset;
-  word-break: break-all;
+  /* word-break: break-all; */
 }
 
 .mat-column-language {
+  /* min-width: 30%; */
+  /* min-width: 2.5rem; */
   word-wrap: break-word;
-  width: 15%;
+  /* width: 15%; */
   flex: 0 0 15%;
   overflow-wrap: break-word;
   white-space: unset;
-  word-break: break-all;
+  /* word-break: break-all; */
 }
 
 .mat-column-svn_url {
-  /* word-wrap: break-word;*/
-  width: 10%;
-  flex: 0 0 10%;
-  /* overflow-wrap: break-word;
-    white-space: unset;  */
+  /* min-width: 40px; */
+  flex: 0 0 9%;
+  background-color: rebeccapurple;
 }
 
 .link-button {
