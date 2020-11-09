@@ -16,6 +16,7 @@ import { MatGridListModule } from '@angular//material/grid-list'
 import { MatIconModule } from '@angular//material/icon'
 import { MatTableModule } from '@angular//material/table'
 import { MatSortModule } from '@angular//material/sort';
+import { MatTooltipModule } from '@angular//material/tooltip';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 
@@ -37,6 +38,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
     MatTableModule,
     MatSortModule,
     HttpClientModule,
+    MatTooltipModule,
     FontAwesomeModule
   ],
   providers: [UsuarioService],
