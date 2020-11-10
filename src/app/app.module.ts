@@ -21,7 +21,6 @@ import { MatTooltipModule } from '@angular//material/tooltip';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ErrorDialogComponent } from './dialogs/error-dialog/error-dialog.component'
 
-
 @NgModule({
   declarations: [
     AppComponent,

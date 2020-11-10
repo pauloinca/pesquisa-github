@@ -10,7 +10,7 @@ app.get('/*', (req, res) => {
     res.sendFile(__dirname + '/dist/desafio-github/index.html');
 });
 
-app.listen(process.env.PORT, () =>{
+app.listen(PORT, () =>{
     console.log('Servidor iniciado na porta ' + PORT);
 })
 
