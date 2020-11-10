@@ -2,12 +2,17 @@
   "name": "desafio-github",
   "version": "0.0.0",
   "scripts": {
+    "herok-postbuild": "ng build --prod",
     "ng": "ng",
-    "start": "node server",
+    "start": "node server.js",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
+  },
+  "engines": {
+    "node": "12.14.0",
+    "npm": "6.14.8"
   },
   "private": true,
   "dependencies": {
