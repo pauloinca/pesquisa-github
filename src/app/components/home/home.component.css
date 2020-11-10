@@ -84,8 +84,8 @@
 }
 
 .search-button {
-  width: calc(3vw + 3vh);
-  height: calc(3vw + 3vh);
+  /* width: calc(3vw + 3vh);
+  height: calc(3vw + 3vh); */
   background-color: #222222;
 
   display: flex;
