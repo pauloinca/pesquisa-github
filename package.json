@@ -1,12 +1,9 @@
 {
   "name": "desafio-github",
   "version": "0.0.0",
-   "engines": {
-   "node": "15.1.0"
-  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
