@@ -122,7 +122,7 @@
   transition: background-color 1s;
 }
 
-.search-button fa-icon {
+.search-button fa-icon {  
   width: calc(3vw + 3vh);
   height: calc(3vw + 3vh);
   color: white;
