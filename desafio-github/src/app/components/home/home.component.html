@@ -1,26 +1,37 @@
-<header>
-    <div class="img-cover-wrapper">
-        <img src="../assets/images/cover.jpg" alt="" />
-    </div>
-  </header>
-  
-  <div class="main-div">
-    <mat-card class="card-container">
+
+<div class="main-div">
+
+  <!-- <mat-card class="panel-container">
+
+    </mat-card> -->
+  <div class="panel-header">
+    <!-- <mat-card class="card-container-header"></mat-card> -->
       <div class="img-wrapper">
         <img src="./assets/images/github.png" alt="" />
       </div>
-      <div class="search-wrapper">
+    <!-- </mat-card> -->
+  </div>
+
+  <div class="panel-body">
+    <mat-card class="card-container-body">
+      <div class="form-search-container">
+        <div class="search-form-wrapper">
           <mat-form-field class="search-form-field">
-            <mat-label>Teste</mat-label>
-            <input (keyup)="onKey($event)" (keyup.enter)="enterPress('usuario')" matInput placeholder="teste">
+            <mat-label>Usuário</mat-label>
+            <input (keyup)="onKey($event)" (keyup.enter)="enterPress('/usuario')" matInput>
           </mat-form-field>
-          <div class="search-button">
-            <button routerLink="" (click)="enterPress('/usuario')" mat-raised-button color="primary">Pesquisa</button>
-          </div>
+        </div>
+        <div class="search-button-wrapper">
+          <button class="search-button" (click)="enterPress('/usuario')" mat-fab>
+            <fa-icon [icon]="faPesquisa"></fa-icon>
+          </button>
+        </div>
       </div>
     </mat-card>
-  
-  
   </div>
-  
-  <router-outlet></router-outlet>
+
+
+
+</div>
+
+<router-outlet></router-outlet>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { UsuarioService } from '../../services/usuario.service'
 import {AfterViewInit, ViewChild} from '@angular/core';
 import {MatSort} from '@angular/material/sort';
@@ -44,7 +43,7 @@ export class UsuarioComponent implements OnInit, AfterViewInit {
   ngOnInit(){
     this.router.paramMap.subscribe(params => {
       this.userName = params.get("usuario");      
-    })
+    });
   }
 
   ngAfterViewInit(){

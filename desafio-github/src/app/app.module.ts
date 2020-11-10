@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UsuarioService } from './services/usuario.service'
 
 import { MatCardModule } from '@angular/material/card'
+import { MatDialogModule } from '@angular/material/dialog'
 import { MatInputModule } from '@angular/material/input'
 import { MatButtonModule } from '@angular/material/button'
 import { MatGridListModule } from '@angular//material/grid-list'
@@ -17,14 +18,16 @@ import { MatIconModule } from '@angular//material/icon'
 import { MatTableModule } from '@angular//material/table'
 import { MatSortModule } from '@angular//material/sort';
 import { MatTooltipModule } from '@angular//material/tooltip';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ErrorDialogComponent } from './dialogs/error-dialog/error-dialog.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    ErrorDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -39,9 +42,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
     MatSortModule,
     HttpClientModule,
     MatTooltipModule,
+    MatDialogModule,
     FontAwesomeModule
   ],
   providers: [UsuarioService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ErrorDialogComponent]
 })
 export class AppModule { }
