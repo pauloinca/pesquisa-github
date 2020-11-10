@@ -1,81 +1,163 @@
-.main-div{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;    
-    overflow: hidden;
-}
-
 header {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    position: fixed;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
 }
 
 .img-cover-wrapper {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .img-cover-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
 }
 
-.card-container{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* justify-content: center;
-    align-content: center;
-    flex-wrap: wrap; */
+.main-div {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.img-wrapper{
-    /* display: flex;
+.panel-header {
+  /* width: 98%; */
+  /* height: 65%; */
+  margin-top: calc(1vw + 1vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* min-width: 50%; */
+}
+
+.card-container-header {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  border-radius: 50%;
+  /* border-radius: 50%; */
+  /* height: 80vh; */
+  /* width: 40%;
+    height: 80%; */
+  /* background-color: turquoise; */
+}
+
+
+
+.img-wrapper {
+  /* display: flex;
     justify-content: center;
     align-content: center; */
-    width: 100%;
-    height: 100%;
-    display: flex;
+  /* background-color: violet; */
+  /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;     */
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%;
 }
 
-.img-wrapper img{
-    width: 80%;
-    height: auto;
+.img-wrapper img {
+  margin: 0;
+  position: relative;
+  background-color: white;
+  border-radius: 50%;
+  width: 100%;
+  height: auto;
 }
 
-.search-wrapper{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
+.panel-body {
+  margin-top: calc(1vw + 1vh);
+  width: calc(30vw + 30vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* .form-search{    
-    width: 30rem;
-} */
-
-.search-button{
+.card-container-body {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* border-radius: 50%; */
+  /* height: 80vh; */
+  /* width: 40%;
+    height: 80%; */
 
 }
 
-.form-search button{
-
+.form-search-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: turquoise; */
 }
 
-.search-form-field{
-    position: relative;
-    width: 100%;
-    font-size: 1.5rem;
+.search-form-wrapper {
+  width: 100%;
+  /* height: 10%; */
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  /* background-color: yellowgreen; */
+}
+
+
+.search-form-field {
+  width: 95%;
+  font-size: calc(1.2vw + 1.2vh);  
+  /* color: black; */
+  /* background-color: blueviolet; */
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: white;
+}
+
+.mat-form-field.mat-form-field {
+    color:white;
+  }
+
+.search-button-wrapper {  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-button {
+  width: calc(3vw + 3vh);
+  height: calc(3vw + 3vh);
+  background-color: #222222;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 2s;
+}
+
+.search-button:hover {
+  transition: color 1s;
+  background-color: #777777;
+  transition: background-color 1s;
+}
+
+.search-button fa-icon {
+  width: calc(3vw + 3vh);
+  height: calc(3vw + 3vh);
+  color: white;
 }
