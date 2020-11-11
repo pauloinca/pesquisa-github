@@ -71,11 +71,16 @@
 }
 
 
-.search-form-field {
+.search-form-wrapper mat-form-field{
   width: 95%;
-  font-size: calc(1.2vw + 1.2vh);  
-
+  font-size: 1.5rem;
 }
+
+ /* .search-form-field { 
+
+  font-size: calc(1.2vw + 1.2vh); 
+
+} */
 
 .search-button-wrapper {  
   display: flex;

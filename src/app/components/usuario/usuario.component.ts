@@ -32,6 +32,7 @@ export class UsuarioComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['name', 'description', 'stargazers_count', 'language', 'svn_url'];
   dataSource: any
   userName: any // Nome do usuário
+  loading: boolean = false;
 
   @ViewChild (MatSort) sort: MatSort;
 
@@ -41,13 +42,15 @@ export class UsuarioComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(){
+    this.loading = true;
+    console.log('ngoninit');
     this.router.paramMap.subscribe(params => {
       this.userName = params.get("usuario");      
-    });
+    });    
   }
 
   ngAfterViewInit(){
-
+    console.log('ngafter');
       // Pego as informaçoes do usuario
       this.usuarioService.getProfileInfo(this.userName).subscribe(usuario => {
         this.usuario = usuario;      
@@ -59,6 +62,7 @@ export class UsuarioComponent implements OnInit, AfterViewInit {
         this.dataSource = new MatTableDataSource(this.repos);
         this.dataSource.sort = this.sort;        
       });
+      this.loading = false;
   }
 
 }
