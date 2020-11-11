@@ -3,11 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { BehaviorSubject } from 'rxjs';
 
-// interface user {
-//   login: string;
-//   id: string;
-// }
-
 @Injectable({
   providedIn: 'root'
 })
@@ -23,7 +18,7 @@ export class UsuarioService {
     this.dataSource.next(data);
   }
 
-  getProfileInfo(usuario: string){ // Retorna Observable com as infos do http do usuario
+  getProfileInfo(usuario: string){ // Retorna Observable com as infos do http do usuario    
     return this.http.get("https://api.github.com/users/"+usuario).map(res => res); 
   }
 
