@@ -19,14 +19,16 @@ import { MatTableModule } from '@angular//material/table'
 import { MatSortModule } from '@angular//material/sort';
 import { MatTooltipModule } from '@angular//material/tooltip';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ErrorDialogComponent } from './dialogs/error-dialog/error-dialog.component'
+import { ErrorDialogComponent } from './dialogs/error-dialog/error-dialog.component';
+import { ErrorComponent } from './components/error/error.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     UsuarioComponent,
-    ErrorDialogComponent
+    ErrorDialogComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
