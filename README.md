@@ -4,12 +4,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Plugins, frameworks e bibliotecas
 
-Font-Awesome
-Angular Material
+* Font-Awesome\
+* Angular Material\
+* Rxjs\
 
 ## Icones
 
-:package: nova funcionalidade
-:up: atualização
-:beetle: correção de bug
-:checkered_flag: release
+:package: - Nova funcionalidade\
+:up: - Atualização\
+:beetle: - Correção de bug\
+:checkered_flag: - Release\
