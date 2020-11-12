@@ -1,125 +1,126 @@
+  <!-- ##### Div Principal ##### -->
+  <div *ngIf="loading == false" class="main-div">
 
-    <div *ngIf="loading == false" class="main-div">
+    <!-- ##### Card de fundo ##### -->
+    <mat-card class="card-container">
 
-      <!-- ##### Card de fundo ##### -->
-      <mat-card class="card-container">
+      <!-- ##### Card Header ##### -->
+      <mat-card class="panel-header mat-typography">
 
-        <!-- ##### Card Header ##### -->
-        <mat-card class="panel-header mat-typography">
+        <!-- ##### Avatar ##### -->
+        <div class="avatar-wrapper">
+          <img src="{{usuario.avatar_url}}">
+        </div>
+        <div class="super-box-container">
 
-          <!-- ##### Avatar ##### -->
-          <div class="avatar-wrapper">
-            <img src="{{usuario.avatar_url}}">
-          </div>
-          <div class="super-box-container">
+          <!-- ##### Nome e Login ##### -->
+          <div class="box-container1">
+            <div class="box1">
+              <fa-icon matTooltip="Nome e login" matTooltipPosition="left" [icon]="faNome"></fa-icon>
+              <div class="sub-box1">
+                <div *ngIf="usuario.name != null; else elseBlockName">
+                  <h2>{{usuario.name}}</h2>
+                </div>
+                <ng-template #elseBlockName>
+                  <h2>Indisponível</h2>
+                </ng-template>
+                <h3>{{usuario.login}}</h3>
+              </div>
+            </div>
 
-            <!-- ##### Nome e Login ##### -->
-            <div class="box-container1">
+            <!-- ##### Seguidores e Seguindo ##### -->
+            <div class="sub-box23">
               <div class="box2">
-                <fa-icon matTooltip="Nome e login" matTooltipPosition="left" [icon]="faNome"></fa-icon>
-                <div class="sub-box2">
-                  <div *ngIf="usuario.name != null; else elseBlockName">
-                    <h2>{{usuario.name}}</h2>
-                  </div>
-                  <ng-template #elseBlockName>
-                    <h2>Não disponível</h2>
-                  </ng-template>
-                  <h3>{{usuario.login}}</h3>
-                </div>
+                <fa-icon matTooltip="Seguidores" matTooltipPosition="left" [icon]="faSeguidores"></fa-icon>
+                <h3>{{usuario.followers}}</h3>
               </div>
-
-              <!-- ##### Seguidores e Seguindo ##### -->
-              <div class="sub-box34">
-                <div class="box3">
-                  <fa-icon matTooltip="Seguidores" matTooltipPosition="left" [icon]="faSeguidores"></fa-icon>
-                  <h3>{{usuario.followers}}</h3>
-                </div>
-                <div class="box4">
-                  <fa-icon matTooltip="Seguindo" matTooltipPosition="left" [icon]="faSeguindo"></fa-icon>
-                  <h3>{{usuario.following}}</h3>
-                </div>
+              <div class="box3">
+                <fa-icon matTooltip="Seguindo" matTooltipPosition="left" [icon]="faSeguindo"></fa-icon>
+                <h3>{{usuario.following}}</h3>
               </div>
             </div>
-            <div class="box-container2">
+          </div>
 
-              <!-- ##### Email ##### -->
-              <div *ngIf="usuario.email != null; else elseBlockEmail" class="box5">
+          <div class="box-container2">
+
+            <!-- ##### Email ##### -->
+            <div *ngIf="usuario.email != null; else elseBlockEmail" class="box4">
+              <fa-icon matTooltip="Email" matTooltipPosition="left" [icon]="faEnvelope"></fa-icon>
+              <h3>{{usuario.email}}</h3>
+            </div>
+            <ng-template #elseBlockEmail>
+              <div class="box4">
                 <fa-icon matTooltip="Email" matTooltipPosition="left" [icon]="faEnvelope"></fa-icon>
-                <h3>{{usuario.email}}</h3>
+                <h3>Indisponível</h3>
               </div>
-              <ng-template #elseBlockEmail>
-                <div class="box5">
-                  <fa-icon matTooltip="Email" matTooltipPosition="left" [icon]="faEnvelope"></fa-icon>
-                  <h3>Não disponível</h3>
-                </div>
-              </ng-template>
+            </ng-template>
 
-              <!-- ##### Biografia ##### -->
-              <div *ngIf="usuario.bio != null; else elseBlockBio" class="box6">
-                <fa-icon matTooltip="Biografia" matTooltipPosition="left" [icon]="faBiografia"></fa-icon>
-                <h4>{{usuario.bio}}</h4>
-              </div>
-              <ng-template #elseBlockBio>
-                <div class="box6">
-                  <fa-icon matTooltip="Biografia" matTooltipPosition="left" [icon]="faBiografia"></fa-icon>
-                  <h4>Não disponível</h4>
-                </div>
-              </ng-template>
+            <!-- ##### Biografia ##### -->
+            <div *ngIf="usuario.bio != null; else elseBlockBio" class="box5">
+              <fa-icon matTooltip="Biografia" matTooltipPosition="left" [icon]="faBiografia"></fa-icon>
+              <h4>{{usuario.bio}}</h4>
             </div>
+            <ng-template #elseBlockBio>
+              <div class="box5">
+                <fa-icon matTooltip="Biografia" matTooltipPosition="left" [icon]="faBiografia"></fa-icon>
+                <h4>Indisponível</h4>
+              </div>
+            </ng-template>
           </div>
-        </mat-card>
-
-        <!-- ##### Card Body ##### -->
-        <mat-card class="panel-body">
-          <div class="panel-text">
-            <h1>Repositórios</h1>
-          </div>
-          <div class="panel-repositorios">
-            <mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort matSortActive="stargazers_count"
-              matSortDirection="desc">
-
-              <!-- Nome Column -->
-              <ng-container matColumnDef="name">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Nome </mat-header-cell>
-                <mat-cell *matCellDef="let repos"> {{repos.name}} </mat-cell>
-              </ng-container>
-
-              <!-- Descrição Column -->
-              <ng-container matColumnDef="description">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Descrição </mat-header-cell>
-                <mat-cell *matCellDef="let repos"> {{repos.description}} </mat-cell>
-              </ng-container>
-
-              <!-- Nº Estrelas Count Column -->
-              <ng-container matColumnDef="stargazers_count">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Nº estrelas </mat-header-cell>
-                <mat-cell *matCellDef="let repos"> {{repos.stargazers_count}} </mat-cell>
-              </ng-container>
-
-              <!-- Linguagem Column -->
-              <ng-container matColumnDef="language">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Linguagem </mat-header-cell>
-                <mat-cell *matCellDef="let repos"> {{repos.language}} </mat-cell>
-              </ng-container>
-
-              <!-- Link Column -->
-              <ng-container matColumnDef="svn_url">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Link </mat-header-cell>
-                <mat-cell *matCellDef="let repos">
-                  <a target="_blank" href="{{repos.svn_url}}" mat-mini-fab class="link-button">
-                    <fa-icon [icon]="faLink"></fa-icon>
-                  </a>
-                </mat-cell>
-              </ng-container>
-
-              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-              <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-            </mat-table>
-          </div>
-        </mat-card>
+        </div>
       </mat-card>
 
-    </div>
+      <!-- ##### Card Body ##### -->
+      <mat-card class="panel-body">
+        <div class="panel-text">
+          <h1>Repositórios</h1>
+        </div>
+        <div class="panel-repositorios">
+          <mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort matSortActive="stargazers_count"
+            matSortDirection="desc">
+
+            <!-- Nome Column -->
+            <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Nome </mat-header-cell>
+              <mat-cell *matCellDef="let repos"> {{repos.name}} </mat-cell>
+            </ng-container>
+
+            <!-- Descrição Column -->
+            <ng-container matColumnDef="description">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Descrição </mat-header-cell>
+              <mat-cell *matCellDef="let repos"> {{repos.description}} </mat-cell>
+            </ng-container>
+
+            <!-- Nº Estrelas Count Column -->
+            <ng-container matColumnDef="stargazers_count">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Nº estrelas </mat-header-cell>
+              <mat-cell *matCellDef="let repos"> {{repos.stargazers_count}} </mat-cell>
+            </ng-container>
+
+            <!-- Linguagem Column -->
+            <ng-container matColumnDef="language">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Linguagem </mat-header-cell>
+              <mat-cell *matCellDef="let repos"> {{repos.language}} </mat-cell>
+            </ng-container>
+
+            <!-- Link Column -->
+            <ng-container matColumnDef="svn_url">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Link </mat-header-cell>
+              <mat-cell *matCellDef="let repos">
+                <a target="_blank" href="{{repos.svn_url}}" mat-mini-fab class="link-button">
+                  <fa-icon [icon]="faLink"></fa-icon>
+                </a>
+              </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+        </div>
+      </mat-card>
+    </mat-card>
+
+  </div>
 
 
   <router-outlet></router-outlet>
