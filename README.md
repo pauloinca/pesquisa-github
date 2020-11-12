@@ -1,4 +1,4 @@
-# DesafioGithub
+# DesafioGithub versão 1.0.0
 
 Projeto com o objetivo consultar a API do GitHub e mostrar repositórios populares de um determinado usuário
 

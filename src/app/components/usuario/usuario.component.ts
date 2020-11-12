@@ -35,7 +35,7 @@ export class UsuarioComponent implements OnInit, AfterViewInit {
     'language',
     'svn_url',
   ];
-  dataSource: any;
+  dataSource: any; // Dados da tabela
   userName: any; // Nome do usuário
   loading: boolean = true; // Avisa se a página está carregando ou não
 
