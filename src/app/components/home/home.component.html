@@ -1,36 +1,39 @@
 
 <div class="main-div">
 
-  <!-- <mat-card class="panel-container">
-
-    </mat-card> -->
+  <!-- ##### Header + Imagem ##### -->
   <div class="panel-header">
-    <!-- <mat-card class="card-container-header"></mat-card> -->
       <div class="img-wrapper">
         <img src="./assets/images/github.png" alt="" />
       </div>
-    <!-- </mat-card> -->
   </div>
 
   <div class="panel-body">
+
+    <!-- ##### Card Body ##### -->  
     <mat-card class="card-container-body">
+
+      <!-- ##### Container do form ##### -->  
       <div class="form-search-container">
+        
+        <!-- ##### Wrapper barra de pesquisa ##### -->  
         <div class="search-form-wrapper">
           <mat-form-field class="search-form-field">
             <mat-label>Usuário</mat-label>
             <input (keyup)="onKey($event)" (keyup.enter)="enterPress('/usuario')" matInput>
           </mat-form-field>
         </div>
+
+        <!-- ##### Wrapper botão ##### -->  
         <div class="search-button-wrapper">
           <button class="search-button" (click)="enterPress('/usuario')" mat-fab>
             <fa-icon [icon]="faPesquisa"></fa-icon>
           </button>
         </div>
+        
       </div>
     </mat-card>
   </div>
-
-
 
 </div>
 
