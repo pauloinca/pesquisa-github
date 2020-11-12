@@ -33,28 +33,6 @@ h4 {
   align-items: center;
   overflow: hidden;
 }
-
-/* header {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  position: fixed;
-}
-
-.img-cover-wrapper {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.img-cover-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.5;
-} */
-
 /* ----- Card container ----- */
 
 .card-container {
@@ -69,24 +47,13 @@ h4 {
   width: 70%;
 }
 
-/* ----- Card header e body ----- */
+/* ----- Header e container -> Profile ----- */
 
 .panel-header {
   width: 98%;
   height: 42%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  min-width: 50%;
-}
-
-.panel-body {
-  margin-top: calc(.5vw + .5vh);
-  width: 98%;
-  height: 58%;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-width: 50%;
@@ -103,6 +70,8 @@ h4 {
   padding-left: .5rem;
   padding-right: .5rem;
 }
+
+/* ----- Avatar ----- */
 
 .avatar-wrapper {
   width: 20%;
@@ -122,6 +91,8 @@ h4 {
   margin: 0;
 }
 
+/* ----- Container 1: Box2 e Box3 ----- */
+
 .box-container1 {
   display: flex;
   width: 100%;
@@ -129,16 +100,9 @@ h4 {
   height: 50%;
 }
 
-.box-container2 {
-  display: flex;
-  width: 100%;
-  height: 50%;
-  min-width: 50%;
-  margin-top: calc(1vw + 1vh);
-}
+/* ----- Box1: Nome e Login ----- */
 
-
-.box2 {
+.box1 {
   height: auto;
   width: 80%;
   display: flex;
@@ -147,7 +111,7 @@ h4 {
   line-height: 2rem;
 }
 
-.box2 fa-icon {
+.box1 fa-icon {
   display: flex;
   align-content: center;
   align-items: center;
@@ -155,18 +119,20 @@ h4 {
   margin-right: 1vw;
 }
 
-.sub-box2 {
+.sub-box1 {
+  margin-right: calc(1vw + 1vh);
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.sub-box2 h2 {
-  /* line-height: 1rem; */
+.sub-box1 h2 {
   word-wrap: break-word;
 }
 
-.sub-box34 {
+/* ----- Sub-box23: Box2 + Box3 ----- */
+
+.sub-box23 {
   height: auto;
   width: 50%;
   display: flex;
@@ -175,8 +141,25 @@ h4 {
   align-items: center;
 }
 
-.box3 {
-  /* width: 20%; */
+/* ----- Box2: Seguidores ----- */
+
+.box2 {
+  line-height: 3rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.box2 fa-icon {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  font-size: calc(1.5vw + 1.5vh);
+  margin-right: .5vw;
+}
+
+/* ----- Box3: Seguindos ----- */
+
+.box3 {  
   line-height: 3rem;
   display: flex;
   flex-direction: row;
@@ -190,23 +173,20 @@ h4 {
   margin-right: .5vw;
 }
 
+/* ----- Container2: Box4 + Box5 ----- */
+
+.box-container2 {
+  display: flex;
+  width: 100%;
+  height: 50%;
+  min-width: 50%;
+  margin-top: calc(1vw + 1vh);
+}
+
+/* ----- Box4: Email ----- */
+
 .box4 {
-  /* width: 20%; */
-  line-height: 3rem;
-  display: flex;
-  flex-direction: row;
-}
-
-.box4 fa-icon {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  font-size: calc(1.5vw + 1.5vh);
-  margin-right: .5vw;
-}
-
-
-.box5 {
+  margin-right: calc(1vw + 1vh);
   height: auto;
   width: 40%;
   display: flex;
@@ -216,7 +196,19 @@ h4 {
   line-height: 2rem;
 }
 
-.box6 {
+.box4 fa-icon {
+  margin-right: 1vw;
+  font-size: calc(1.3vw + 1.3vh);
+  width: calc(2vw + 2vh);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ----- Box4: Biografia ----- */
+
+.box5 {
   height: 100%;
   width: 60%;
   display: flex;
@@ -234,49 +226,34 @@ h4 {
   align-items: center;
 }
 
-.box6 fa-icon {
-  margin-right: 1vw;
-  font-size: calc(1.3vw + 1.3vh);
-  width: calc(2vw + 2vh);
-  text-align: center;
+/* ----- Panel Body -> Repositórios ----- */
+
+.panel-body {
+  margin-top: calc(.5vw + .5vh);
+  width: 98%;
+  height: 58%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-width: 50%;
 }
 
-
 .panel-text {
-  /* display: flex;
-    align-items: center;
-    align-content: center; */
   margin-top: 1rem;
 }
 
 .panel-repositorios {
-  /* height: 10rem; */
-  /* overflow-y: auto; */
-  /* height: 20rem; */
   overflow: auto;
   width: 100%;
-  /* display: flex;
-    justify-content: center;
-    align-items: center; */
 }
 
 .panel-repositorios mat-table {
   overflow: auto;
-  /* position: relative; */
   width: 100%;
   margin: 0;
-  /* width: 100%;    
-    overflow-y: scroll;
-    max-height: 8rem; */
 }
 
-/* .mat-table{
-    overflow: auto;
-    max-height: 8rem;
-} */
 .mat-cell,
 .mat-header-cell {
   padding: 0px 3px 0px 3px;
@@ -287,44 +264,31 @@ h4 {
 .mat-column-name {
   word-wrap: break-word;
   min-width: 3.5rem;
-  /* width: 15%; */
   flex: 0 0 20%;
   overflow-wrap: break-word;
   white-space: unset;
-  /* word-break: break-all; */
 }
 
 .mat-column-description {
   min-width: 7rem;
   word-wrap: break-word;
-  /* min-width: 10rem; */
-  /* width: 40%; */
   flex: 0 0 50%;
   overflow-wrap: break-word;
   white-space: unset;
-  /* word-break: break-all; */
 }
 
 .mat-column-stargazers_count {
-  /* min-width: 30%; */
   word-wrap: break-word;
-  /* width: 15%; */
   min-width: 4rem;
-  /* flex: 0 0 15%; */
   overflow-wrap: break-word;
   white-space: unset;
-  /* word-break: break-all; */
 }
 
 .mat-column-language {
   min-width: 4rem;
-  /* min-width: 2.5rem; */
   word-wrap: break-word;
-  /* width: 15%; */
-  /* flex: 0 0 15%; */
   overflow-wrap: break-word;
   white-space: unset;
-  /* word-break: break-all; */
 }
 
 .mat-column-svn_url {
@@ -332,7 +296,6 @@ h4 {
 }
 
 .link-button {
-  /* position: relative; */
   box-shadow: none !important;
   width: 2rem;
   height: 2rem;
@@ -340,14 +303,12 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* text-align: center; */
   transition: background-color 1s;
 }
 
 .link-button:hover {
   transition: color 1s;
   background-color: #9c9c9c;
-  ;
 }
 
 .link-button fa-icon {
