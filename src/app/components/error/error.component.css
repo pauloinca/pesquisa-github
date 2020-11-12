@@ -1,0 +1,61 @@
+/* ----- Tipografia e fontes ----- */
+
+h1 {
+  font-size: calc(2.5rem + 3.0vw);
+}
+
+h2 {
+  font-size: calc(1rem + 1.3vw);
+}
+
+/* ----- Main divs ----- */
+
+.main-div {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card-container {
+  background-color: #e0e0e0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  min-width: 15%;
+  width: 70%;
+}
+
+.panel-body {
+  width: 98%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 50%;
+}
+
+/* ----- Text wrapper ----- */
+
+.text2-wrapper {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  word-wrap: break-word;
+  margin-top: calc(1vh + 1vw);
+}
+
+/* ----- Icon wrapper ----- */
+
+.icon-wrapper {  
+  margin-bottom: calc(2vh + 2vw);
+}
+
+.icon-wrapper fa-icon {
+  font-size: calc(10vw + 10vh);
+}

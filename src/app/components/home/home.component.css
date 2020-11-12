@@ -1,0 +1,98 @@
+
+/* ----- Div principal ----- */
+
+.main-div {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* ----- Header -> Imagem ----- */
+
+.panel-header {
+  margin-top: calc(1vw + 1vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-wrapper {
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.img-wrapper img {
+  margin: 0;
+  position: relative;
+  background-color: white;
+  border-radius: 50%;
+  width: 100%;
+  height: auto;
+}
+
+/* ----- Body -> Barra de pesquisa + botão ----- */
+
+.panel-body {
+  margin-top: calc(1vw + 1vh);
+  width: calc(30vw + 30vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.form-search-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-form-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+
+.search-form-wrapper mat-form-field{
+  width: 95%;
+  font-size: 1.5rem;
+}
+
+.search-button-wrapper {  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-button {
+  background-color: #222222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 2s;
+}
+
+.search-button:hover {
+  transition: color 1s;
+  background-color: #777777;
+  transition: background-color 1s;
+}
+
+.search-button fa-icon {  
+  color: white;
+}
