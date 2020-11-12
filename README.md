@@ -1,14 +1,17 @@
 # DesafioGithub
 
+Projeto com o objetivo consultar a API do GitHub e mostrar repositórios populares de um determinado usuário
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
-## Plugins, frameworks e bibliotecas
+## Principais plugins, frameworks e bibliotecas
 
 * Font-Awesome  
 * Angular Material  
 * Rxjs  
+* Express
 
-## Icones
+## Icones para controle de commit
 
 :package: - Nova funcionalidade  
 :up: - Atualização  
