@@ -2,6 +2,8 @@
 
 Projeto com o objetivo consultar a API do GitHub e mostrar repositórios populares de um determinado usuário
 
+Disponível em: https://desafio-github.herokuapp.com/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
 ## Principais plugins, frameworks e bibliotecas
